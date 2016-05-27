@@ -21,8 +21,9 @@ public class Kompleksiluku {
     }
     public Kompleksiluku kertaa(Kompleksiluku c2){
         Kompleksiluku c1 = this;
-        double real = c2.getRe()*c1.getRe();
-        double imag = c2.getIm()*c1.getIm();
+        double real = c2.getRe()*c1.getRe()-c1.getIm()*c2.getIm();
+        double imag = c1.getIm()*c2.getRe()+c1.getRe()*c2.getIm();
+        
         return new Kompleksiluku(real, imag);
     }
     

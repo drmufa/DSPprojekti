@@ -8,7 +8,11 @@ package dsp.mathOperations;
 /**
  *
  * @author jajnousi
+ * 
+ * FFT algoritmi toimii vektoreille jonka pituus on 2^n. Algoritmi on rekursiivinen.
+ * 
  */
 public class FFT {
+    
     
 }

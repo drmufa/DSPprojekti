@@ -10,5 +10,8 @@ package dsp.mathOperations;
  * @author jajnousi
  */
 public class IFFT {
+
+    public IFFT() {
+    }
     
 }
