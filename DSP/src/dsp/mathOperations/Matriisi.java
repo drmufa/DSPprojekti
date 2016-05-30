@@ -67,6 +67,7 @@ public class Matriisi {
         
         //System.out.println(E);
         //System.out.println(O);
+        
         //Matriisien yhdistäminen fourier muunnokseksi
         
         Matriisi muunnos = new Matriisi(x,y);
