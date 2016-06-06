@@ -43,6 +43,17 @@ public class Matriisi {
     public Kompleksiluku poimi(int x, int y){
         return this.A[x][y];
     }
+    public double max(){
+        double max = 0;
+        for (Kompleksiluku[] kompleksilukus : A) {
+            for (Kompleksiluku kompleksiluku : kompleksilukus) {
+                if(kompleksiluku.getRe()> max){
+                    max = kompleksiluku.getRe();
+                }
+            }
+        }
+        return max;       
+    }
     
     /*
     Algoritmi täyttää vektorit 2^n kokoisiksi ja suorittaa sitten nopean fourier muunnoksen
@@ -131,6 +142,8 @@ public class Matriisi {
         System.out.println(new Matriisi(uusi));
         return new Matriisi(uusi);        
     }
+    
+    
 
     public int getN() {
         return N;

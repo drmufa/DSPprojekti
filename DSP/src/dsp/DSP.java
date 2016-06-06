@@ -7,6 +7,8 @@ package dsp;
 
 import dsp.mathOperations.Kompleksiluku;
 import dsp.mathOperations.Matriisi;
+import javax.swing.SwingUtilities;
+import kayttoliittyma.Kayttoliittyma;
 
 /**
  *
@@ -26,9 +28,14 @@ public class DSP {
             Kompleksiluku k = new Kompleksiluku(i+1,0);
             A.sijoita(k, i, 0);
         }
+        System.out.println(A.max());
         System.out.println(z1.exp());
         System.out.println(A);
         System.out.println(A.FFT());
+        
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
+        kayttoliittyma.setMat(A);
+        SwingUtilities.invokeLater(kayttoliittyma);
     }
     
 }
