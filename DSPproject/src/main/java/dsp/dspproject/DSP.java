@@ -73,5 +73,8 @@ public class DSP {
         frame.setContentPane(plot);
         frame.setVisible(true);
         
+        System.out.println(1%2);
+        System.out.println(2%2);
+        
     }
 }

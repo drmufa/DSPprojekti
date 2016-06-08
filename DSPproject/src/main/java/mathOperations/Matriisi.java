@@ -47,6 +47,7 @@ public class Matriisi {
     */
 
     public Matriisi(int x, int y, int max){
+        this.A = new Kompleksiluku[x][y];
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 double a = new Random().nextDouble()*max;
@@ -108,7 +109,7 @@ public class Matriisi {
             return Matriisi;
         }
         // parillisuus jokaisella rekursiolla (myöhemmin oma metodi, joka muuntaa väärän kokoisen oikean kokoiseksi)
-        if(x % 2 != 0 || y !=1){
+        if(x % 2 != 0 || y != 1){
             throw new RuntimeException(" N tai M väärän kokoinen");
         }
         
