@@ -53,6 +53,7 @@ public class DSP {
         
         Matriisi B = A.FFT();
         //Matriisi B = A;
+        B = B.IFFTpower2(B);
         
         double[] x = new double[B.getN()];
         double[] y = new double[B.getN()];

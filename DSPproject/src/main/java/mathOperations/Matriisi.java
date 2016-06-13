@@ -152,6 +152,19 @@ public class Matriisi {
         return muunnos;    
     }
     
+    public Matriisi IFFTpower2(Matriisi matriisi){
+        Matriisi konjukaatti = new Matriisi(matriisi.getN(),matriisi.getM());
+        for (int i = 0; i < matriisi.N; i++) {
+            konjukaatti.sijoita(matriisi.poimi(i, 0).kompleksikonjukaatti(), i, 0);
+        }
+        
+        konjukaatti = konjukaatti.FFT();
+        for (int i = 0; i < matriisi.getN(); i++) {
+            konjukaatti.sijoita(konjukaatti.poimi(i, 0).kompleksikonjukaatti().jaettuna(new Kompleksiluku(1,0)), i, 0);    
+        }
+        
+        return konjukaatti;        
+    }
     /* 
      *Metodi muuntaa matriisin kaksikantaiseksi lisäämällä nollia tarvittava maara
      */
