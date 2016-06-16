@@ -25,6 +25,7 @@ public class MatriisiTest {
     private Matriisi A;
     private Matriisi B;
     private Matriisi C;
+    private Matriisi D;
     
     public MatriisiTest() {
 
@@ -52,6 +53,7 @@ public class MatriisiTest {
             }  
         }
         C = new Matriisi(zz);
+        D = new Matriisi(8,1,2);
     }
     @Test
     public void sijoitaTest(){
@@ -63,6 +65,16 @@ public class MatriisiTest {
         assertEquals("0", C.poimi(0, 0).toString());
         double i = Math.ceil(B.poimi(4, 4).getRe());
         assertEquals(1, (int)i);
+    }
+    @Test
+    public void maxTest(){
+        assertEquals(6, (int)C.max());
+        assertEquals(0, (int)B.max());
+    }
+    @Test
+    public void muunnaTest(){
+        assertEquals(8, A.muunna().getN());
+        assertEquals(8, D.muunna().getN());
     }
     
     @After

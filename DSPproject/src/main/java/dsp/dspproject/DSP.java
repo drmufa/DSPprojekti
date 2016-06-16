@@ -46,14 +46,21 @@ public class DSP {
             Kompleksiluku k = new Kompleksiluku(a,0);
             A.sijoita(k, i, 0);
         }
+        A = new Matriisi(4,1);
+        for (int i = 0; i < 4; i++) {
+            A.sijoita(new Kompleksiluku(i,0), i, 0);          
+        }
         System.out.println(A.max());
         System.out.println(z1.exp());
         System.out.println(A);
-        System.out.println(A.FFT());
+        //System.out.println(A.FFT());
         
         Matriisi B = A.FFT();
+        
         //Matriisi B = A;
         B = B.IFFTpower2(B);
+        
+        System.out.println(B);
         
         Kuvaaja kuvaaja = new Kuvaaja();
         kuvaaja.plottaa(B);
