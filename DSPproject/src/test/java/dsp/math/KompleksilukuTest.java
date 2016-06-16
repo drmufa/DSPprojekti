@@ -1,3 +1,5 @@
+package dsp.math;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,7 +7,7 @@
  */
 
 import java.io.IOException;
-import mathOperations.Kompleksiluku;
+import dsp.math.Kompleksiluku;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;

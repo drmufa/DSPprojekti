@@ -9,8 +9,8 @@ package dsp.dspproject;
 import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import mathOperations.Kompleksiluku;
-import mathOperations.Matriisi;
+import dsp.math.Kompleksiluku;
+import dsp.math.Matriisi;
 import org.math.plot.Plot2DPanel;
 import org.math.plot.PlotPanel;
 

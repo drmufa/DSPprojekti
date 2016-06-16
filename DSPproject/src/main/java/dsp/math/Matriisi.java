@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package mathOperations;
+package dsp.math;
 
 import java.util.Random;
 
