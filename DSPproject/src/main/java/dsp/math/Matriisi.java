@@ -152,6 +152,9 @@ public class Matriisi {
         return muunnos;    
     }
     
+    /*
+    Fourier-käänteismuunnos. Metodi käyttää apuna jo valmista FFT metodia.
+    */
     public Matriisi IFFTpower2(Matriisi matriisi){
         Matriisi konjukaatti = new Matriisi(matriisi.getN(),matriisi.getM());
         for (int i = 0; i < matriisi.N; i++) {

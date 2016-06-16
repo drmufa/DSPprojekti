@@ -55,27 +55,9 @@ public class DSP {
         //Matriisi B = A;
         B = B.IFFTpower2(B);
         
-        double[] x = new double[B.getN()];
-        double[] y = new double[B.getN()];
+        Kuvaaja kuvaaja = new Kuvaaja();
+        kuvaaja.plottaa(B);
         
-        for (int i = 0; i < B.getN(); i++) {
-            y[i] = B.poimi(i, 0).getRe();
-            x[i] = i;
-        }
-
-        // create your PlotPanel (you can use it as a JPanel)
-        Plot2DPanel plot = new Plot2DPanel();
-
-        // add a line plot to the PlotPanel
-        plot.addLinePlot("my plot", x, y);
-
-        // put the PlotPanel in a JFrame, as a JPanel
-        JFrame frame = new JFrame("a plot panel");
-        frame.setContentPane(plot);
-        frame.setVisible(true);
-        
-        System.out.println(1%2);
-        System.out.println(2%2);
         
     }
 }
