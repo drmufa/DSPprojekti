@@ -17,11 +17,18 @@ package dsp.math;
 public class Kompleksiluku {
     private final double re;
     private final double im;
+    
+    /*
+    Luo kompleksiluvun
+    */
 
     public Kompleksiluku(double re, double im) {
         this.re = re;
         this.im = im;
     }
+    /*
+    Kompleksi ketrolasku
+    */
     public Kompleksiluku kertaa(Kompleksiluku c2){
         Kompleksiluku c1 = this;
         double real = c2.getRe()*c1.getRe()-c1.getIm()*c2.getIm();
@@ -29,34 +36,46 @@ public class Kompleksiluku {
         
         return new Kompleksiluku(real, imag);
     }
-    
+    /*
+    Kompleksi akolasku
+    */
     public Kompleksiluku jaettuna(Kompleksiluku c2){ 
         return this.kertaa(c2.kaanteisalkio());
     }
-    
+    /*
+    Kompleksinen yhteenlasku
+    */
     public Kompleksiluku plus(Kompleksiluku c2){
         Kompleksiluku c1 = this;
         double real = c2.getRe()+c1.getRe();
         double imag = c2.getIm()+c1.getIm();
         return new Kompleksiluku(real, imag);
     }
-    
+    /*
+    Kompleksinen vähennyslasku
+    */
     public Kompleksiluku miinus(Kompleksiluku c2){
         Kompleksiluku c1 = this;
         double real = c1.getRe()-c2.getRe();
         double imag = c1.getIm()-c2.getIm();
         return new Kompleksiluku(real, imag);
     }
-    
+    /*
+    Kompleksikonjukaatin ottaminen
+    */
     public Kompleksiluku kompleksikonjukaatti(){       
         return new Kompleksiluku(this.getRe(), -this.getIm());
     }
-    
+    /*
+    käänteisalkion ottaminen
+    */
     public Kompleksiluku kaanteisalkio(){
         double nimittaja = re*re + im*im;
         return new Kompleksiluku(re/nimittaja, -im/nimittaja);
     }
-    // e potenssiin alkio 
+    /* 
+    e potenssiin haluttu alkio
+    */ 
     public Kompleksiluku exp(){
         return new Kompleksiluku(Math.exp(re)*Math.cos(im), 
                 Math.exp(re)*Math.sin(im));

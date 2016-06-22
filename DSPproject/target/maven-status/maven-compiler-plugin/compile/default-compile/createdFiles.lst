@@ -1,4 +1,7 @@
 dsp/dspproject/Kuvaaja.class
+dsp/dspproject/EsimerkkiVektori.class
 dsp/dspproject/DSP.class
-dsp/math/Matriisi.class
+dsp/dspproject/HighPassFilter.class
+dsp/dspproject/LowPassFilter.class
 dsp/math/Kompleksiluku.class
+dsp/math/Matriisi.class
