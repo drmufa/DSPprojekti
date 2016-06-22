@@ -25,9 +25,9 @@ public class DSP {
     public static void main(String[] args) {
         Kompleksiluku z1 = new Kompleksiluku(2,5);
         Kompleksiluku z2 = new Kompleksiluku(4,6);/// TODO code application logic here
-        Matriisi A = new Matriisi(256,1);
+        Matriisi A = new Matriisi(8168,1,1);
         //Matriisi B = A.muunna(A);
-        for (int i = 0; i < A.getN(); i++) {
+        /*for (int i = 0; i < A.getN(); i++) {
             double a = new Random().nextDouble();
             if(i<16){
                 a = 1;
@@ -49,21 +49,24 @@ public class DSP {
         A = new Matriisi(4,1);
         for (int i = 0; i < 4; i++) {
             A.sijoita(new Kompleksiluku(i,0), i, 0);          
-        }
-        System.out.println(A.max());
-        System.out.println(z1.exp());
-        System.out.println(A);
+        }*/
+        //System.out.println(A.max());
+        //System.out.println(z1.exp());
+        //System.out.println(A);
         //System.out.println(A.FFT());
         
+        long aikaAlussa = System.currentTimeMillis(); 
         Matriisi B = A.FFT();
+        long aikaLopussa = System.currentTimeMillis(); 
+        System.out.println("Operaatioon kului aikaa: " + (aikaLopussa - aikaAlussa) + "ms."); 
         
         //Matriisi B = A;
-        B = B.IFFTpower2(B);
+        //B = B.IFFTpower2(B);
         
-        System.out.println(B);
+        //System.out.println(B);
         
-        Kuvaaja kuvaaja = new Kuvaaja();
-        kuvaaja.plottaa(B);
+        //Kuvaaja kuvaaja = new Kuvaaja();
+        //kuvaaja.plottaa(B);
         
         
     }
