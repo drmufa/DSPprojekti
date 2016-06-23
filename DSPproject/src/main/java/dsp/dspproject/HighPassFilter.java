@@ -23,10 +23,12 @@ public class HighPassFilter {
         
         matriisi = matriisi.FFT();
         int N = matriisi.getN();
-        for (int i = 0; i < 3*N/4; i++) {
-            matriisi.sijoita(new Kompleksiluku(0,matriisi.poimi(i, 0).getIm()), i, 0);          
+        for (int i = 0; i < N/4; i++) {
+            matriisi.sijoita(new Kompleksiluku(0,0), i, 0);          
         }
-        
+        for (int i = 3*N/4; i < N; i++) {
+            matriisi.sijoita(new Kompleksiluku(0,0), i, 0);          
+        }
         return matriisi.IFFTpower2(matriisi);       
     }
 }

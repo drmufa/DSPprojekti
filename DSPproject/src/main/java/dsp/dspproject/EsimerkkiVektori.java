@@ -18,6 +18,32 @@ public class EsimerkkiVektori {
 
     public EsimerkkiVektori() {
     }
+    
+    public Matriisi teeMuoto2(Matriisi A){
+        for (int i = 0; i < A.getN(); i++) {
+            
+            double a = Math.cos(i*Math.PI/16);
+            
+            Kompleksiluku k = new Kompleksiluku(a,0);
+            A.sijoita(k, i, 0);
+            
+        }
+        for (int i = 0; i < A.getN(); i++) {
+           if(i == 12 ){
+                double a = 0.5;           
+                Kompleksiluku k = new Kompleksiluku(a,0);
+                A.sijoita(k, i, 0); 
+                }
+           if(i == 6){
+                double a = 0.2;           
+                Kompleksiluku k = new Kompleksiluku(a,0);
+                A.sijoita(k, i, 0); 
+            }
+        
+            }
+        
+        return A;        
+    }
     public Matriisi teeMuoto(Matriisi A){
         for (int i = 0; i < A.getN(); i++) {
             double a = new Random().nextDouble();

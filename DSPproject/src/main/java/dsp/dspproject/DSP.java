@@ -29,11 +29,16 @@ public class DSP {
         //luo tarvittavat matriisit
         Matriisi matriisi = new Matriisi(1,1,1);
         Matriisi muunnos = new Matriisi(1,1,1);
+        Matriisi high = new Matriisi(1,1,1);
+        Matriisi low = new Matriisi(1,1,1);
         
         //luo esimerkki matriisit
         Matriisi A = new Matriisi(256,1);
         Matriisi B = new Matriisi(256,1);
         Matriisi C = new Matriisi(256,1);
+        Matriisi D = new Matriisi(16,1);
+        Matriisi E = new Matriisi(16,1);
+        Matriisi F = new Matriisi(16,1);
         
         //luo Kuvajaa ja filtterit
         Kuvaaja kuvaaja = new Kuvaaja();
@@ -41,12 +46,16 @@ public class DSP {
         HighPassFilter hf = new HighPassFilter();
         EsimerkkiVektori ev = new  EsimerkkiVektori();
         A = ev.teeMuoto(A);
+        D = ev.teeMuoto2(D);
+       // kuvaaja.plottaa(D);
         
        
 
         System.out.println("Hello");
+        System.out.println("komennot: <exit> <vektori> <plot> <FFT> <IFFT> <lowpass> <highpass>");
+       
         while(true){
-            System.out.println(">>");
+            System.out.println("Anna komento:");
             String komento = lukija.nextLine(); 
             
             if(komento.equals("exit")){
@@ -62,6 +71,7 @@ public class DSP {
                 }
                 matriisi = new Matriisi(l,1,1);
                 muunnos = matriisi;
+                
             }
             else if(komento.equals("plot")){
                  kuvaaja.plottaa(matriisi);
@@ -79,14 +89,19 @@ public class DSP {
                 kuvaaja.plottaa(C);
             }else if(komento.equals("lowpass")){
                 kuvaaja.plottaa(matriisi);
-                matriisi = lf.LowPass(matriisi);
-                kuvaaja.plottaa(matriisi);
+                low = lf.LowPass(matriisi);
+                kuvaaja.plottaa(low);
             }else if(komento.equals("highpass")){
                 kuvaaja.plottaa(matriisi);
-                matriisi = hf.HighPass(matriisi);
-                kuvaaja.plottaa(matriisi);
-            }  
-            else {
+                high = hf.HighPass(matriisi);
+                kuvaaja.plottaa(high);
+            }else if(komento.equals("esim2")){
+                kuvaaja.plottaa(D);
+                E = lf.LowPass(D);
+                F = hf.HighPass(D);
+                kuvaaja.plottaa(E);
+                kuvaaja.plottaa(F);  
+            }else {
                 System.out.println(">>");
             }
         }
